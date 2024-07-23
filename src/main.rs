@@ -135,8 +135,6 @@ fn scan(
 
 fn main() {
     const VERSION: &str = env!("CARGO_PKG_VERSION");
-    // let folders = ["node_modules", ".venv", "venv", ".git"];
-
     let folders = get_folders();
 
     let args: Vec<String> = env::args().collect();
@@ -162,14 +160,9 @@ fn main() {
         std::process::exit(1);
     }
 
-    // root doit être &str  et resolved_path est
-    // let root  = resolved_path;
     let root: &Path = resolved_path.as_path();
-
     let file_save = if args.len() > 2 { Some(&args[2]) } else { None };
-
     let folders_slice: Vec<&str> = folders.iter().map(|s| s.as_str()).collect();
-
     let mut all_weights = Vec::new();
 
     scan(root, root, &folders_slice, &mut all_weights);

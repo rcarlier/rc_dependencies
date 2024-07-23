@@ -2,11 +2,11 @@
 
 Find dependencies (sub)folders, and their sizes in a given folder.
 
-Initially created to find what often takes up a lot of space in the renderings of my students' work...
+Initially created to find what often takes up a lot of space in the renderings of my students' work (useless after corrections).
 
 Do not find dependencies folder inside a folder...
 
-## Usage:
+## :sparkle: Usage:
 
 ```bash
 rc_dependencies <root_folder> [json_file]
@@ -22,7 +22,7 @@ export RC_DEPENDENCIES=".venv,venv,node_modules,.git"
 
 Don't forget to `source ~/.bash_profile` (or equiv).
 
-## Output (json)
+## :book: Output (json)
 
 Something like this:
 
@@ -53,7 +53,22 @@ Something like this:
 }
 ```
 
-## Technical:
+## :fire: Reminder - destructive processes
+
+```sh
+cd some/folder/path/
+rm -rf ./.git/
+```
+
+```sh
+cd some/folder/path/
+source venv/bin/activate
+./venv/bin/pip freeze > requirements.txt
+# And destroy !
+rm -rf ./venv/
+```
+
+## :wrench: Technical:
 
 ```sh
 # build exe
@@ -61,5 +76,4 @@ cargo build --release
 
 # move to folder in path (MacOS)...
 sudo cp ./target/release/rc_dependencies /usr/local/bin/rc_dependencies
-
 ```
