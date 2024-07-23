@@ -2,7 +2,7 @@
 
 Find dependencies (sub)folders, and their sizes in a given folder.
 
-Usage: rc_dependencies <root_folder> [json_file]
+Initially created to find what often takes up a lot of space in the renderings of my students' work...
 
 Do not find dependencies folder inside a folder...
 
